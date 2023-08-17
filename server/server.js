@@ -6,10 +6,10 @@ const dotenv = require('dotenv');
 dotenv.config({ path: '../.env' });
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, "../client/build")));
+app.use(express.static(path.join(__dirname, "/build")));
 app.use(express.urlencoded({ extended: true }));
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../client/build", "index.html"));
+  res.sendFile(path.join(__dirname, "/build", "index.html"));
 });
 
 app.post("/convert", async (req, res) => {
