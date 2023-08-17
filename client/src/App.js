@@ -22,7 +22,7 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch("https://tubebyte.onrender.com/convert", {
+    fetch("/convert", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
