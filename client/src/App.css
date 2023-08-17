@@ -1,63 +1,131 @@
-.Site {
-  text-align: center;
-  display:block;
-  position: relative;
-  top: 0px;
-  .header{
-    color: #2098D1;
-    font-size: 25px;
-  }
-  .mid-header{
-    color: #2098D1;
-    font-size: 20px;
-  }
-  .bottom-header{
-    color: #8dd2f3;
-    font-size: 18px;
-  }
-  .img{
-    display: block;
-    position: absolute;
-    top: 100px;
-    left: 100px;  
-  }
-  .textbox{
-    border-radius: 4px;
-    background-color: green;
-    color: white;
-  }
-  .button{
-    margin-left: 10px;
-    border-radius:15px;
-    display: inline-block;
-  vertical-align: middle;
-  -webkit-transform: perspective(1px) translateZ(0);
-  transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-  overflow: hidden;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-property: color, background-color;
-  transition-property: color, background-color;
-  cursor: pointer;
-  }
-  .button:hover{
-    background-color: #2098D1;
-    color: white;
-  }
+/* Reset default margin and padding */
+body, h1, h2, h3, p, ul, li {
+  margin: 0;
+  padding: 0;
 }
-.App {
+y
+/* Set box-sizing for all elements */
+* {
+  box-sizing: border-box;
+}
+
+/* Basic styles for the whole app */
+.Site {
+  font-family: Arial, sans-serif;
+  color: #2098D1;
   text-align: center;
-  display:block;
-  position: relative;
-  .extras{
-    width: 40%;
-    .link{
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  padding-left: 5px;
+}
+
+/* Center the .App container */
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 50%; /* Ensure it takes the full width available */
+  .extras {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Change to flex-start */
+  margin-top: 20px;
+.link{
       margin-left: 1rem;
       cursor: pointer;
       color: rgb(79, 79, 229);
     }
-  }
-  /* background-color: red; */
+}
 }
 
+/* Style for the top image */
+.Site img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Style for the input container */
+.top {
+  margin-top: 10px; /* Slightly adjusted margin */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.textbox {
+  margin: 5px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 300px; /* Adjust the width as needed */
+  color: #fff; /* Set the text color to black */
+  background-color: green;
+}
+/* Button styles */
+.button {
+  margin-top: 10px;
+  border-radius: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  overflow: hidden;
+  transition-duration: 0.3s;
+  transition-property: color, background-color;
+  cursor: pointer;
+  background-color: transparent;
+  border: 2px solid #2098D1;
+  color: #2098D1;
+  padding: 10px 20px;
+}
+
+.button:hover {
+  background-color: #2098D1;
+  color: white;
+}
+
+/* Center success content */
+.bottom-content {
+  color: #8dd2f3;
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* Explicitly center the headers */
+.header,
+.mid-header,
+.bottom-header {
+  text-align: center;
+}
+
+/* Explicitly center the form inputs */
+.textbox,
+.button {
+  margin: 5px;
+}
+
+/* Explicitly center the image */
+.Site img {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Explicitly center the download button */
+.bottom-header .button {
+  margin: 20px auto;
+}
+
+.header{
+  font-size: 25px;
+}
+.mid-header{
+  font-size: 20px;
+}
+.bottom-header {
+  font-size: 18px;
+}

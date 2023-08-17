@@ -15,12 +15,18 @@ app.get("*", (req, res) => {
 
 app.post("/convert", async (req, res) => {
   let videolink = req.body.videolink;
-  if (videolink === "" || videolink === null || videolink === undefined || !videolink.includes("youtube.com")) {
+  if (videolink === "" || videolink === null || videolink === undefined || (!videolink.includes("youtube.com") && !videolink.includes("youtu.be"))) {
     res.json({ success: false, message : "Please enter valid video link "})
   }
   else {
-    const parts = videolink.split("=");
-    videolink = parts[1];
+    if (videolink.includes("youtube.com")) {
+      const parts = videolink.split("=");
+      videolink = parts[1];
+    }
+    else {
+      const arr = videolink.split("/");
+      videolink = arr[1];
+    }
     // console.log("Received videolink in backend:", videolink);
     // res.json({ success: true, message: `Conversion successful --> ${videolink}` });
     const fetchAPI = await fetch(
