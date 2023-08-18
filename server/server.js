@@ -5,11 +5,7 @@ const app = express();
 const path = require('path')
 const dotenv = require('dotenv');
 dotenv.config();
-
-const corsOptions = {
-  origin: "https://tubebyte.netlify.app/",
-};
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "/build")));
 app.use(express.urlencoded({ extended: true }));
@@ -31,8 +27,6 @@ app.post("/convert", async (req, res) => {
       const arr = videolink.split("/");
       videolink = arr[1];
     }
-    // console.log("Received videolink in backend:", videolink);
-    // res.json({ success: true, message: `Conversion successful --> ${videolink}` });
     const fetchAPI = await fetch(
       `https://youtube-mp3-download1.p.rapidapi.com/dl?id=${videolink}`, {
       "method": "GET",
