@@ -7,9 +7,9 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const corsOptions = {
-  origin: "https://tubebyte.netlify.app/", // Replace with your actual frontend domain
+  origin: "https://tubebyte.netlify.app/",
 };
-app.use(cors(corsOptions()));
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "/build")));
 app.use(express.urlencoded({ extended: true }));
